@@ -4,6 +4,12 @@
 {% block content %}
 <div>
 	<h1>not an <br> Aaashley Madison <br>lookup</h1>
+
+	<p class="maintext">
+		Curious about looking up yourself or others on the internet?<br>
+		Hear about the data that was alegedly stolen and or released from an other site and wondering if some one is in it?
+	</p>
+
 	{% if message %}
 		<div class="alerted">
 			{{message}}
@@ -22,16 +28,22 @@
 	<form action="" method="post">
 		{% csrf_token %}
 		<br>
-		<label for="firstName">firstName</label><input name="firstName" type="text" id="firstName" placeholder="john">
+		<label for="firstName">First Name*</label><input name="firstName" type="text" id="firstName" placeholder="john">
 		<br>
-		<label for="lastName">lastName</label><input name="lastName" type="text" id="lastName" placeholder="doe">
+		<label for="lastName">Last Name*</label><input name="lastName" type="text" id="lastName" placeholder="doe">
 		<br>
-		<label for="emailAddress">emailAddress</label><input name="emailAddress" type="text" id="emailAddress" placeholder="john.doe@gmail.com">
+		<p class="or">or</p>
+		<br>
+		<label for="emailAddress">Email Address*</label><input name="emailAddress" type="text" id="emailAddress" placeholder="john.doe@gmail.com">
 		<input name="usertime" type="hidden" id="clienttime"> 
 		<br>
 		<input type="submit">
 	</form>
 
+	<p class="subtext">
+		aaashleymadison.com has no affiliation or connection with anything else other than this site. All quiers, lookups, searchs conducted on the site will be recorded on a Canadian server and maybe also backuped on servers hosted in the United States of America. All data collected will be kept private for statistical and art purposes only. This by no means is to be used as a tool to look up names in any capacity, it will always return no valid results, there is no warrenties or truth to this site. By submiting quiers, lookups, searchs you are agreeing and understand that your information is being recorded. The purpose of this site is to be a satire/inquiery into the people who conduct quiers, lookups, searchs on people that they may or may not know. The goal is to see trends on where and who people lookup. <br><br>
+		* do not submit real names or email addresses for all information will be stored!
+	</p>
 </div>
 
 	<script type="text/javascript" src="{% static "script.js"%}"></script>
