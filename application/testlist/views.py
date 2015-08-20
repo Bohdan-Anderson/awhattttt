@@ -32,7 +32,7 @@ def home(request):
 	if request.method == 'POST':
 		print "is post"
 		form = ArticleForm(request.POST)
-		time.sleep(3)
+		# time.sleep(3)
 		if form.is_valid():
 			print "is valid"
 
