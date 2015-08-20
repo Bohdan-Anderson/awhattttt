@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div>
+	<h1>not an <br> Aaashley Madison <br>lookup</h1>
+	{% if message %}
+		<div class="alerted">
+			{{message}}
+		</div>
+	{% endif %}
+
+	{% if errors %}
+		<div class="error">
+			{% for field, errors in errors.errors.items %}
+				{% for error in errors %}
+					{{error}}
+				{%endfor%}
+			{% endfor %}
+		</div>
+	{% endif %}
+	<form action="" method="post">
+		{% csrf_token %}
+		<br>
+		<label for="firstName">firstName</label><input name="firstName" type="text" id="firstName" placeholder="john">
+		<br>
+		<label for="lastName">lastName</label><input name="lastName" type="text" id="lastName" placeholder="doe">
+		<br>
+		<label for="emailAddress">emailAddress</label><input name="emailAddress" type="text" id="emailAddress" placeholder="john.doe@gmail.com">
+		<input name="usertime" type="hidden" id="clienttime"> 
+		<br>
+		<input type="submit">
+	</form>
+
+</div>
+
+	<script type="text/javascript" src="{% static "script.js"%}"></script>
+{% endblock content %}
