@@ -42,8 +42,8 @@ def home(request):
 			newSubmission.save()
 
 			if not newSubmission.emailAddress and ((newSubmission.firstName and not newSubmission.lastName) or (not newSubmission.firstName and newSubmission.lastName)):
-				return render(request, 'index.html', {'message': "There was no %d matches for your quiery, be more specific"%randint(0,5000)})
-			return render(request, 'index.html', {'message': "There was no matches for your quiery"})
+				return render(request, 'index.html', {'message': "There was no %d matches for your query, be more specific"%randint(0,5000)})
+			return render(request, 'index.html', {'message': "There was no matches for your query"})
 
 		else:
 			return render(request, 'index.html', {'errors': form})
