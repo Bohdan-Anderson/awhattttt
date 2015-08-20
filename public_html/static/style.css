@@ -67,6 +67,7 @@ label,input{
 	transition: all .5s;
 	vertical-align: top;
 	/*margin: 10px auto;*/
+	font-size: inherit;
 }
 
 input:hover{
