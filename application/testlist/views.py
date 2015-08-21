@@ -47,6 +47,10 @@ def home(request):
 
 		else:
 			return render(request, 'index.html', {'errors': form})
+	else:
+		newConnection = Submission(firstName="getRequest",newIp=get_client_ip(request),meta_info=meta_to_string(request))
+		newConnection.save()
+
 
 	return render(request, 'index.html', {'message': ""})
 
