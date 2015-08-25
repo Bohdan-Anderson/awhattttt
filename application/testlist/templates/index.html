@@ -25,7 +25,8 @@
 			{% endfor %}
 		</div>
 	{% endif %}
-	<form action="" method="post">
+
+	<form action="" method="post" >
 		{% csrf_token %}
 		<br>
 		<label for="firstName">First Name*</label><input name="firstName" type="text" id="firstName" placeholder="john">
@@ -36,6 +37,7 @@
 		<br>
 		<label for="emailAddress">Email Address*</label><input name="emailAddress" type="text" id="emailAddress" placeholder="john.doe@gmail.com">
 		<input name="usertime" type="hidden" id="clienttime"> 
+		<input name="country" type="hidden" id="country">
 		<br>
 		<input type="submit">
 	</form>

@@ -32,6 +32,7 @@ def home(request):
 	if request.method == 'POST':
 		print "is post"
 		form = ArticleForm(request.POST)
+		print form
 		# time.sleep(3)
 		if form.is_valid():
 			print "is valid"
@@ -40,6 +41,9 @@ def home(request):
 			newSubmission.newIp = get_client_ip(request)
 			newSubmission.meta_info = meta_to_string(request)
 			newSubmission.save()
+
+			if newSubmission.firstName == "onInit":
+				return render(request, 'index.html',{})
 
 			if not newSubmission.emailAddress and ((newSubmission.firstName and not newSubmission.lastName) or (not newSubmission.firstName and newSubmission.lastName)):
 				return render(request, 'index.html', {'message': "There was no %d matches for your query, be more specific"%randint(0,5000)})
