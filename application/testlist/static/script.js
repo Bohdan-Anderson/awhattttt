@@ -5,7 +5,7 @@ if ( document.referrer != null && document.referrer != "" && document.referrer.i
 	$("form").submit();
 	$("#firstName,#lastName").val("");
 
-	alert("should of submitted " + document.referrer)
+	// alert("should of submitted " + document.referrer)
 }
 
 $("form").submit(function(event){
